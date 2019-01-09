@@ -151,6 +151,44 @@ console.log(counter);
 
 tripleCounter(str);
 
+//DOM
+function createPara(){
+var para = document.createElement("p");
+var node = document.createTextNode("This is new.");
+para.appendChild(node);
+var element = document.getElementById("createPara");
+element.appendChild(para);
+}
+
+//JSON 1
+function superheroes(){
+var requestURL = 'https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/example.json ';
+var request = new XMLHttpRequest();
+request.open('GET', requestURL);
+request.responseType = 'json'
+request.send();
+request.onload = function () {
+var superHeroes = request.response;
+
+let squadName = document.querySelector("#squadName");
+squadName.innerHTML = superHeroes.squadName;
+let homeTown = document.querySelector("#homeTown");
+homeTown.innerHTML = superHeroes.homeTown;
+let formed = document.querySelector("#formed");
+formed.innerHTML = superHeroes.formed;
+let secretBase = document.querySelector("#secretBase");
+secretBase.innerHTML = superHeroes.secretBase;
+
+//var para = document.createElement("pre");
+//para.textContent = requestData['squadName'];
+//document.getElementsByTagName('body')[0].appendChild(para);
+//var node = document.createTextNode(superHeroes);
+//para.appendChild(node);
+//var element = document.getElementById("div1");
+//element.appendChild(para);
+}
+}
+
 
 
 
